@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GoodBooking</title>
+        <link rel="stylesheet" href="sengodev.css">
+        <script src="sengodev3.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h1>Welcome to GoodBooking Rentals</h1>
+                <div class="auth-buttons">
+                    <button onclick="login()">Login</button>
+                    <button onclick="register()">Sign Up</button>
+                </div>
+            </div>
+        </header>
+
+    <nav>
+        <ul>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#cars">Car Rentals</a></li>
+        </ul>
+    </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel and Car Rental</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="welcome-section">
+        <div>
+            <h1>Welcome to Your Perfect Getaway</h1>
+            <h2>For dream holidays and fancy cars</h2>
+            <div class="buttons">
+                <button onclick="scrollToSection('hotels')">Book a Hotel</button>
+                <button onclick="scrollToSection('car-rentals')">Rent a Car</button>
+            </div>
+        </div>
+    </div>
+</body>
+    <main>
+        <div class="content-wrapper">
+            <section id="hotels">
+                <h2>Find Your Hotel</h2>
+                <div class="filters">
+                    <label for="price">Price Range:</label>
+                    <input type="text" id="price" placeholder="e.g., $50-$200">
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" placeholder="e.g., New York">
+
+                    <label for="stars">Star Rating:</label>
+                    <select id="stars">
+                        <option value="any">Any</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                    </select>
+
+                    <label for="amenities">Amenities:</label>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="toggleDropdown()">Select Amenities</button>
+                        <ul id="dropdown-menu" class="hidden">
+                            <li><label><input type="checkbox" id="wifi"> Free Wi-Fi</label></li>
+                            <li><label><input type="checkbox" id="breakfast"> Free Breakfast</label></li>
+                            <li><label><input type="checkbox" id="pool"> Pool</label></li>
+                            <li><label><input type="checkbox" id="spa"> Spa</label></li>
+                            <li><label><input type="checkbox" id="gym"> Gym</label></li>
+                        </ul>
+                    </div>
+
+                    <label for="distance">Distance to Center (km):</label>
+                    <input type="number" id="distance" min="1" max="50" placeholder="e.g., 5">
+
+                    <button onclick="filterHotels()">Search Hotels</button>
+                </div>
+            </section>
+            <section id="cars">
+                <h2>Rent a Car</h2>
+                <div class="car-filters">
+                    <label for="car-type">Car Type:</label>
+                    <select id="car-type">
+                        <option value="any">Any</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="van">Van</option>
+                        <option value="electric">Electric</option>
+                    </select>
+
+                    <label for="transmission">Transmission:</label>
+                    <select id="transmission">
+                        <option value="any">Any</option>
+                        <option value="manual">Manual</option>
+                        <option value="automatic">Automatic</option>
+                    </select>
+
+                    <label for="passenger-capacity">Passenger Capacity:</label>
+                    <input type="number" id="passenger-capacity" min="2" max="8" placeholder="e.g., 4">
+
+                    <label for="luggage-capacity">Luggage Capacity:</label>
+                    <input type="number" id="luggage-capacity" min="1" max="5" placeholder="e.g., 2">
+
+                    <button onclick="filterCars()">Search Cars</button>
+                </div>
+            </section>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h2>Recommended Hotels</h2>
+      <div class="recommended-hotels">
+        <div class="hotel">
+          <img src="otel1.jpg" width="150" height="150 " alt="Hotel 1" />
+          <h3>Blue Lagoon Resort</h3>
+          <p>Stars: ★★★★☆</p>
+          <p>Price: $140/night</p>
+          <p>Features: Ocean View, Infinity Pool, Free Breakfast</p>
+          <p>User Reviews: "The best resort experience I've ever had!"</p>
+        </div>
+        <div class="hotel">
+          <img src="otel2.jpg" width="150" height="150 " alt="Hotel 2" />
+          <h3>Mountain Peak Inn</h3>
+          <p>Stars: ★★★★★</p>
+          <p>Price: $175/night</p>
+          <p>Features: Spa Services, Nature Trails, Gourmet Dining</p>
+          <p>User Reviews: "Perfect for a peaceful getaway."</p>
+        </div>
+        <div class="hotel">
+          <img src="otel3.jpg" width="150" height="150 " alt="Hotel 3" />
+          <h3>Urban Luxe Hotel</h3>
+          <p>Stars: ★★★☆☆</p>
+          <p>Price: $110/night</p>
+          <p>Features: Rooftop Bar, Central Location, Free Wi-Fi</p>
+          <p>User Reviews: "Great value for a city stay!"</p>
+        </div>
+        <div class="hotel">
+          <img src="otel4.jpg" width="150" height="150 " alt="Hotel 4" />
+          <h3>Riverside Retreat</h3>
+          <p>Stars: ★★★★☆</p>
+          <p>Price: $130/night</p>
+          <p>Features: River View, Kayaking, Outdoor Dining</p>
+          <p>User Reviews: "Loved the peaceful atmosphere by the river."</p>
+        </div>
+        <div class="hotel">
+          <img src="otel5.jpg" width="150" height="150 " alt="Hotel 5" />
+          <h3>Desert Oasis Hotel</h3>
+          <p>Stars: ★★★★☆</p>
+          <p>Price: $120/night</p>
+          <p>Features: Desert Views, Infinity Pool, Spa Services</p>
+          <p>User Reviews: "Unique and serene environment."</p>
+        </div>
+        <div class="hotel">
+          <img src="otel6.jpg" width="150" height="150 " alt="Hotel 6" />
+          <h3>Lakefront Paradise</h3>
+          <p>Stars: ★★★★★</p>
+          <p>Price: $200/night</p>
+          <p>Features: Lake Access, Canoeing, Luxury Suites</p>
+          <p>User Reviews: "An unforgettable experience!"</p>
+        </div>
+      </div>
+      <section id="help">
+        <h2>Help Center</h2>
+        <div id="how-to-use">
+            <h3>How to Use GoodBooking.com</h3>
+            <p>Follow these simple steps to get started:</p>
+            <ol>
+                <h4>1-Navigate to the "Hotels" or "Car Rentals" section using the menu.</h4>
+                <h4>2-Use filters like price range, city, or car type to customize your search.</h4>
+                <h4>3-Click the "Search" button to view the available options.</h4>
+                <h4>4-Select the hotel or car that fits your needs and proceed with the booking.</h4>
+                <h4>5-Provide the required details and confirm your reservation.</h4>
+            </ol>
+        </div>
+        <button onclick="toggleHelp()">FAQ and Live Support</button>
+        <div id="help-content" class="hidden">
+            <h3>Frequently Asked Questions</h3>
+            <div class="question-box">
+                <strong>How do I filter by price?</strong>
+                <span>You can use the price range input to specify your desired range.</span>
+            </div>
+            <div class="question-box">
+                <strong>Can I book multiple hotels at once?</strong>
+                <span>No, each booking needs to be completed separately.</span>
+            </div>
+            <div class="question-box">
+                <strong>Is free cancellation available?</strong>
+                <span>It depends on the hotel's policy. Check the cancellation terms before booking.</span>
+            </div>
+            <div class="question-box">
+                <strong>How do I find family-friendly hotels?</strong>
+                <span>Use the amenities filter and select options like "Family Rooms" or "Kid-friendly."</span>
+            </div>
+            <div class="question-box">
+                <strong>Are there any discounts for long stays?</strong>
+                <span>Some hotels offer discounts for extended bookings. Look for special deals.</span>
+            </div>
+            <div class="question-box">
+                <strong>Can I change my booking dates?</strong>
+                <span>Yes, but changes are subject to the hotel's terms and availability.</span>
+            </div>
+            <div class="live-support">
+                <button>Connect to Live Support</button>
+            </div>
+        </div>
+        
+    </section>
+    <div id="popular-searches">
+        <h3>Popular Searches</h3>
+        <ul>
+            <li><a href="#">Luxury Hotels in New York</a></li>
+            <li><a href="#">Affordable Cars in Los Angeles</a></li>
+            <li><a href="#">Family Hotels in Orlando</a></li>
+            <li><a href="#">SUV Rentals in Miami</a></li>
+            <li><a href="#">Beach Resorts in Hawaii</a></li>
+        </ul>
+    </div>
+    <p>&copy; 2024 GoodBooking.com</p>
+</footer>
+</body>
+</html>
+    
